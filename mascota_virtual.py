@@ -44,14 +44,24 @@ class MascotaVirtual:
         else:
             print(self.imagen_feliz)
             print(f"{self.nombre} se esta divirtiendo") 
-        
+            
         self.energia -= random.randint(20,25)
         if self.energia < 0:
             self.energia = 0
         if self.energia == 0:
             print(f"{self.nombre} necesita dormir")
             return
-        
+          
+    def dormir(self):
+        self.energia += random.randint(20,25)
+        if self.energia > 100:
+            self.energia = 100
+            print(self.imagen_feliz)
+            print(f"{self.nombre} tiene mucha energía!")
+
+        else:
+            print(f"{self.nombre} sigue durmiendo!")
+            
 
     def estado_animo(self):
         if self.hambre >= 70 and self.felicidad <= 50:
